@@ -1,0 +1,3 @@
+{"level":"info","message":"✅ MongoDB connected: ac-ifcfjka-shard-00-02.nvkhuwj.mongodb.net","service":"court-kacheri","timestamp":"2026-05-05 18:05:12"}
+{"level":"info","message":"🚀 Court-Kacheri server running on port 5000 [development]","service":"court-kacheri","timestamp":"2026-05-05 18:05:12"}
+{"level":"http","message":"\u001b[0mGET / \u001b[33m404\u001b[0m 2.037 ms - 9\u001b[0m","service":"court-kacheri","timestamp":"2026-05-05 18:06:14"}
