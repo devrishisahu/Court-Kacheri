@@ -109,6 +109,15 @@ app.use("/api/admin", superAdminRoutes);
 app.use("/api/public", publicRoutes);
 app.use("/api/meetings", meetingRoutes);
 
+// ─── Health Check ─────────────────────────────────────────────────────
+app.get("/health", (_req, res) => {
+  res.json({
+    success: true,
+    message: "Court-Kacheri API is running 🚀",
+    version: "2.0.0",
+  });
+});
+
 // ─── Serve Frontend in Production ──────────────────────────────────────
 if (process.env.NODE_ENV === "production") {
   const clientDistPath = path.join(__dirname, "..", "client", "dist");
@@ -126,15 +135,6 @@ if (process.env.NODE_ENV === "production") {
     logger.warn("⚠️ Client dist not found. Frontend not served.");
   }
 }
-
-// ─── Health Check (Fallback for non-prod or if frontend missing) ────────
-app.get("/health", (_req, res) => {
-  res.json({
-    success: true,
-    message: "Court-Kacheri API is running 🚀",
-    version: "2.0.0",
-  });
-});
 
 // ─── 404 Handler ──────────────────────────────────────────────────────
 app.use((req, res) => {
