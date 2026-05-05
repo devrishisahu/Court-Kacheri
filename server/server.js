@@ -69,6 +69,7 @@ app.use(
 // ─── Security Middleware ──────────────────────────────────────────────
 app.use(
   helmet({
+    contentSecurityPolicy: false,
     crossOriginResourcePolicy: { policy: "cross-origin" },
     crossOriginOpenerPolicy: false,
   }),
