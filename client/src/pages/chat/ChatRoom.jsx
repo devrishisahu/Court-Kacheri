@@ -8,7 +8,12 @@ import toast from 'react-hot-toast';
 import api from '../../api/axios';
 import Button from '../../components/ui/Button';
 
-const SOCKET_URL = import.meta.env.VITE_API_URL?.replace('/api', '') || 'http://localhost:5000';
+// For monolith deploy: relative VITE_API_URL like '/api' means same origin — use undefined so socket.io auto-detects
+const SOCKET_URL = (() => {
+  const apiUrl = import.meta.env.VITE_API_URL || '';
+  if (!apiUrl || apiUrl.startsWith('/')) return undefined; // same-origin: let socket.io auto-detect
+  return apiUrl.replace('/api', '');
+})();
 
 export default function ChatRoom() {
   const { id: meetingId } = useParams();

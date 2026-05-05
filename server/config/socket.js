@@ -10,9 +10,7 @@ let io;
 export const initSocket = (server) => {
   io = new Server(server, {
     cors: {
-      origin: process.env.CORS_ORIGIN === '*'
-        ? '*'
-        : process.env.CORS_ORIGIN?.split(',').map((o) => o.trim()),
+      origin: true,
       methods: ['GET', 'POST'],
       credentials: true,
     },
