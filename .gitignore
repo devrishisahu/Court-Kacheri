@@ -16,7 +16,6 @@ server/uploads/
 server/logs/
 
 # Client specific
-client/dist/
 client/dist-ssr/
 
 # IDEs
