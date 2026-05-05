@@ -4,9 +4,7 @@
   "description": "Monolithic deployment wrapper for Court-Kacheri",
   "private": true,
   "scripts": {
-    "install:all": "npm install --prefix server && npm install --prefix client",
-    "build:client": "npm run build --prefix client",
-    "start": "cd server && NODE_ENV=production node server.js",
-    "deploy": "npm run install:all && npm run build:client && npm run start"
+    "build": "npm install --prefix server && npm install --prefix client && npm run build --prefix client",
+    "start": "node server/server.js"
   }
 }
